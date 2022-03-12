@@ -26,6 +26,7 @@ const Login = async (req, res) => {
       if (!updatedFarmer) {
         return console.log("something went wrong");
       }
+      req.session.token = token;
       req.headers["x-access-token"] = token;
       console.log(req.headers);
       return res

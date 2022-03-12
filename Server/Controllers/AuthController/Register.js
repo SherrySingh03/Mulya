@@ -84,6 +84,7 @@ const Register = async (req, res) => {
       process.env.TOKEN_KEY
     );
     newOrganization.token = token;
+    req.session.token = token;
     req.headers["x-access-token"] = token;
     newOrganization
       .save()
